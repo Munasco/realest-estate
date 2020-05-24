@@ -1,0 +1,49 @@
+.row {
+    max-width: $grid-width;
+    margin: 0 auto;
+
+    @include respond(big-desktop) {
+        max-width: none;
+    }
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+        @include respond(tab-phone) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(tab-port) {
+        padding: 0 4rem;
+    }
+    @include respond(phone) {
+        max-width: 43rem;
+        padding: 0 2rem;
+    }
+    
+    @include clearfix;
+    [class^="col-"] {
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+
+            @include respond(tab-port) {
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        @include respond(tab-port) {
+            width: 100% !important;
+        }
+    }
+
+    @for $total-length from 2 to 7{
+    @for $i from 1 to $total-length {
+        
+        .col-#{$i}-of-#{$total-length} {
+            width: calc(#{$i}*((100% - ((#{$total-length} - 1) * #{$gutter-horizontal})) / #{$total-length}) + ((#{$i} - 1) * #{$gutter-horizontal}));      
+        }
+        }
+    }  
+   
+}
