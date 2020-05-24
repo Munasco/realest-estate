@@ -80,22 +80,6 @@ WSGI_APPLICATION = 'realest_estate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'realest_estate', 
-        'USER': 'postgres', 
-        'PASSWORD': 'Zimuzo_1869',
-        'HOST': 'localhost'
-    }
-}
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ojosunday1410@gmail.com'
-EMAIL_HOST_PASSWORD = 'yajjtussnldnxmwm'
-EMAIL_USE_TLS = True
 
 
 # Password validation
@@ -161,3 +145,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 FILE_UPLOAD_PERMISSIONS=0o640
 
 AUTH_USER_MODEL = 'accounts.UserAccount'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
