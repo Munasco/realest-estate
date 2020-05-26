@@ -17,7 +17,7 @@ function Listings() {
 
        const fetchData = async ()=> {
            try{
-               const res = await axios.get('http://localhost:8000/api/listings/?page=1');
+               const res = await axios.get('http://161.35.111.5/api/listings/?page=1');
                setListings(res.data.results)
                setCount(res.data.count)
                setPrevious(res.data.previous)
@@ -75,7 +75,7 @@ function Listings() {
     }
 
     const visitPage = (page)=> {
-        axios.get(`http://localhost:8000/api/listings/?page=${page}`)
+        axios.get(`http://161.35.111.5/api/listings/?page=${page}`)
         .then(res=> {
             setListings(res.data.results)
             setActive(page)
