@@ -1,0 +1,2 @@
+(this.webpackJsonpfrontend=this.webpackJsonpfrontend||[]).push([[8],{110:function(e,n,t){"use strict";t.r(n);var a=t(0),o=t.n(a);n.default=function(){return o.a.createElement("div",{className:"notfound"},o.a.createElement("h1",{className:"notfound__heading"},"404 Not Found"),o.a.createElement("p",{className:"notfound__paragraph"},"The Link you requested does not exist on our website"))}}}]);
+//# sourceMappingURL=8.b859fd30.chunk.js.map
